@@ -157,10 +157,16 @@
 
   th,
   td {
-    @apply px-3 py-2 text-left;
-    min-width: 120px;
+    @apply px-3 py-2;
+    min-width: 80px;
     border: none;
     word-break: break-word;
+  }
+
+  th:first-child,
+  td:first-child {
+    min-width: 4.5rem;
+    width: 4.5rem;
   }
 
   th {
