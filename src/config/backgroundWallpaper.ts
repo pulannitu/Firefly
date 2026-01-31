@@ -10,7 +10,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		// 桌面背景图片
 		desktop: "/assets/images/d1.webp",
 		// 移动背景图片
-		mobile: "/assets/images/m1.webp",
+		mobile: "/assets/images/m1.png",
 	},
 	// Banner模式特有配置
 	banner: {
@@ -24,17 +24,17 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			// 是否启用主页横幅文字
 			enable: true,
 			// 主页横幅主标题
-			title: "Lovely firefly!",
+			title: "静坐观云，偶作闲谈",
 			// 主页横幅主标题字体大小
 			titleSize: "3.8rem",
 			// 主页横幅副标题
 			subtitle: [
-				"In Reddened Chrysalis, I Once Rest",
-				"From Shattered Sky, I Free Fall",
-				"Amidst Silenced Stars, I Deep Sleep",
-				"Upon Lighted Fyrefly, I Soon Gaze",
-				"From Undreamt Night, I Thence Shine",
-				"In Finalized Morrow, I Full Bloom",
+				"看似寻常最奇崛，成如容易却艰辛。",
+				"操千曲而后晓声，观千剑而后识器。",
+				"偶得幽闲境，遂忘尘俗心。",
+				"细雨湿衣看不见，闲花落地听无声。",
+				"流光容易把人抛，红了樱桃，绿了芭蕉。",
+				"草木本无意，荣枯自有时。",
 			],
 			// 主页横幅副标题字体大小
 			subtitleSize: "1.5rem",
@@ -55,21 +55,21 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		credit: {
 			enable: {
 				// 桌面端显示横幅图片来源文本
-				desktop: true,
+				desktop: false,
 				// 移动端显示横幅图片来源文本
-				mobile: true,
+				mobile: false,
 			},
 			text: {
 				// 桌面端要显示的来源文本
 				desktop: "Pixiv - 晚晚喵",
 				// 移动端要显示的来源文本
-				mobile: "Pixiv - KiraraShss",
+				mobile: "Haowallpaper - 拍照的男孩",
 			},
 			url: {
 				// 桌面端原始艺术品或艺术家页面的 URL 链接
 				desktop: "https://www.pixiv.net/artworks/135490046",
 				// 移动端原始艺术品或艺术家页面的 URL 链接
-				mobile: "https://www.pixiv.net/users/42715864",
+				mobile: "https://haowallpaper.com/mobileViewLook/15012804018670912",
 			},
 		},
 		// 横幅导航栏配置

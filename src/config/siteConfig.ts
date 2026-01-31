@@ -7,24 +7,34 @@ const SITE_LANG = "zh_CN";
 
 export const siteConfig: SiteConfig = {
 	// 站点标题
-	title: "Firefly",
+	title: "普蓝尼兔",
 
 	// 站点副标题
-	subtitle: "Demo site",
+	subtitle: "生活不止coding",
 
 	// 站点 URL
-	site_url: "https://firefly.cuteleaf.cn",
+	site_url: "https://blog.plnt.top",
 
 	// 站点描述
 	description:
-		"Firefly 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。",
+		"这里是普蓝尼兔的小站：日常输出、偶尔高产、长期摸鱼，但每次更新都很真诚；如果你看到矛盾的结论，说明我又在成长了。",
 
 	// 站点关键词
 	keywords: [
-		"Firefly",
-		"Fuwari",
+		"普蓝尼兔",
+		"plnt",
+		"blog.plnt.top",
+		"Go",
+		"Golang",
+		"后端",
+		"后端开发",
+		"API",
+		"Gin",
+		"gRPC",
+		"MySQL",
+		"Redis",
+		"Docker",
 		"Astro",
-		"ACGN",
 		"博客",
 		"技术博客",
 		"静态博客",
@@ -67,11 +77,11 @@ export const siteConfig: SiteConfig = {
 		// { type: "image", value: "https://example.com/logo.png", alt: "Firefly Logo" }
 		logo: {
 			type: "image",
-			value: "/assets/images/firefly.png",
-			alt: "🍀",
+			value: "/assets/images/logo.png",
+			alt: "🐰",
 		},
 		// 导航栏标题
-		title: "Firefly",
+		title: "普蓝尼兔",
 		// 全宽导航栏，导航栏是否占满屏幕宽度，true：占满，false：不占满
 		widthFull: false,
 		// 导航栏图标和标题是否跟随主题色
@@ -79,7 +89,7 @@ export const siteConfig: SiteConfig = {
 	},
 
 	// 站点开始日期，用于统计运行天数
-	siteStartDate: "2025-01-01",
+	siteStartDate: "2026-01-31",
 
 	// 站点时区（IANA 时区字符串），用于格式化bangumi、rss里的构建日期时间等等..
 	// 示例："Asia/Shanghai", "UTC", 如果为空，则按照构建服务器的时区进行时区转换
@@ -117,7 +127,7 @@ export const siteConfig: SiteConfig = {
 		// 留言板页面开关，需要配置评论系统
 		guestbook: true,
 		// 番组计划页面开关，含追番、游戏、书籍和音乐，dev调试时只获取一页数据，build才会获取全部数据
-		bangumi: true,
+		bangumi: false,
 	},
 
 	// 文章列表布局配置
@@ -146,9 +156,9 @@ export const siteConfig: SiteConfig = {
 	// 统计分析
 	analytics: {
 		// Google Analytics ID
-		googleAnalyticsId: "G-P7GBNJKJKL",
+		googleAnalyticsId: "G-33MPLG84Z8",
 		// Microsoft Clarity ID
-		microsoftClarityId: "tx9equrgr6",
+		microsoftClarityId: "v9ygzr6vex",
 	},
 
 	// 字体配置
