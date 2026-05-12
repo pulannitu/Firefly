@@ -20,7 +20,7 @@ const { headings: _headings = [], class: className, style } = Astro.props;
   class={className}
   style={style}
 >
-  <div class="toc-scroll-container">
+  <div class="toc-scroll-container custom-scrollbar">
     <div
       class="toc-content"
       id="sidebar-toc-content"
@@ -37,7 +37,7 @@ const { headings: _headings = [], class: className, style } = Astro.props;
 </style>
 
 <script>
-  import { TOCManager } from "@/utils/tocUtils";
+  import { TOCManager } from "@/utils/toc-utils";
 
   if (typeof window.SidebarTOC === "undefined") {
     window.SidebarTOC = {
@@ -100,5 +100,10 @@ const { headings: _headings = [], class: className, style } = Astro.props;
       setTimeout(initSidebarTOC, 100);
     }
     window.tocInternalNavigation = false;
+  });
+
+  // 密码解密后重新初始化 TOC
+  document.addEventListener("password:decrypted", () => {
+    setTimeout(initSidebarTOC, 200);
   });
 </script>

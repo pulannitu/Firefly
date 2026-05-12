@@ -14,6 +14,9 @@ export const sponsorConfig: SponsorConfig = {
 	// 是否显示赞助者列表
 	showSponsorsList: true,
 
+	// 是否显示评论区，需要先在commentConfig.ts启用评论系统
+	showComment: true,
+
 	// 是否在文章详情页底部显示赞助按钮
 	showButtonInPost: true,
 
@@ -36,39 +39,9 @@ export const sponsorConfig: SponsorConfig = {
 			description: "使用 微信 扫码赞助",
 			enabled: true,
 		},
-		// {
-		// 	name: "ko-fi",
-		// 	icon: "simple-icons:kofi",
-		// 	qrCode: "",
-		// 	link: "https://ko-fi.com/cuteleaf",
-		// 	description: "Buy a Coffee for Firefly",
-		// 	enabled: true,
-		// },
-		// {
-		// 	name: "爱发电",
-		// 	icon: "simple-icons:afdian",
-		// 	qrCode: "",
-		// 	link: "https://afdian.com/a/cuteleaf",
-		// 	description: "通过 爱发电 进行赞助",
-		// 	enabled: true,
-		// },
 	],
 
 	// 赞助者列表（可选）
 	sponsors: [
-		// 示例：已实名赞助者
-		// {
-		// 	name: "夏叶",
-		// 	amount: "¥50",
-		// 	date: "2025-10-01",
-		// 	message: "感谢分享！",
-		// },
-		//
-		// // 示例：匿名赞助者
-		// {
-		// 	name: "匿名用户",
-		// 	amount: "¥20",
-		// 	date: "2025-10-01",
-		// },
 	],
 };

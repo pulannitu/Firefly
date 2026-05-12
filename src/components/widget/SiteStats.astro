@@ -92,7 +92,7 @@ const stats = [
 		id: "running-days",
 	},
 	{
-		icon: "material-symbols:ecg-heart-outline",
+		icon: "mingcute:heartbeat-line",
 		label: i18n(I18nKey.siteStatsLastUpdate),
 		value: 0, // 将由客户端更新
 		suffix: i18n(I18nKey.siteStatsDaysAgo).replace("{days}", ""),
@@ -107,7 +107,7 @@ const stats = [
     {stats.map((stat) => (
       <div class="flex items-center justify-between px-3 py-1.5">
         <div class="flex items-center gap-2.5">
-          <div class="text-[var(--primary)] text-xl">
+          <div class="text-(--primary) text-xl">
             <Icon name={stat.icon} />
           </div>
           <span class="text-neutral-700 dark:text-neutral-300 font-medium text-sm">

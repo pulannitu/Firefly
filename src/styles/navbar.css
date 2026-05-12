@@ -4,7 +4,7 @@
  * 模式说明：
  * ============================================
  * 1. 壁纸模式 (backgroundWallpaper.mode):
- *    - "banner": 横幅壁纸模式 (有 #banner-wrapper)
+ *    - "banner": 横幅壁纸模式 (有 #wallpaper-wrapper)
  *    - "overlay": 全屏壁纸模式 (body.wallpaper-transparent)
  *    - "none": 纯色背景无壁纸
  * 
@@ -17,15 +17,42 @@
  * ============================================
  */
 
+@reference "tailwindcss";
+
+@utility navbar-surface-transition {
+  transition:
+    background-color 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    backdrop-filter 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    border-radius 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 /* ============================================
  * 基础导航栏样式
  * 适用: 所有模式，所有设备
  * ============================================ */
 #navbar>div {
-    background: var(--card-bg);
+    background-color: var(--card-bg);
     border: 1px solid transparent;
     border-radius: 0 0 0.75rem 0.75rem;
-    transition: all var(--duration-medium) var(--ease-standard);
+    backdrop-filter: blur(0);
+    @apply navbar-surface-transition;
+}
+
+/* 通用滚动阴影：用于提升导航栏与页面内容的分层感 */
+#navbar.navbar-sticky-shadow>div {
+    box-shadow: var(--shadow-navbar) !important;
+}
+
+:root.dark #navbar.navbar-sticky-shadow>div {
+    box-shadow: var(--shadow-navbar-dark) !important;
+}
+
+/* semifull 模式的透明阶段不单独显示 sticky shadow，避免 8px 和 50px 两段跳变 */
+#wallpaper-wrapper~* #navbar[data-transparent-mode="semifull"]:not(.scrolled).navbar-sticky-shadow>div,
+body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scrolled).navbar-sticky-shadow>div {
+    box-shadow: none !important;
 }
 
 /* ============================================
@@ -36,47 +63,41 @@
 @media (min-width: 1024px) {
 
     /* "semi" */
-    #banner-wrapper~* #navbar[data-transparent-mode="semi"]>div,
-    body:has(#banner-wrapper) #navbar[data-transparent-mode="semi"]>div {
+    #wallpaper-wrapper~* #navbar[data-transparent-mode="semi"]>div,
+    body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semi"]>div {
         backdrop-filter: blur(var(--navbar-glass-blur, 20px)) !important;
         background: rgba(255, 255, 255, var(--opacity-55)) !important;
-        border: 1px solid rgba(255, 255, 255, var(--opacity-55)) !important;
         border-radius: 0 0 0.75rem 0.75rem !important;
         box-shadow: var(--shadow-navbar) !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
 
     /* "full" */
-    #banner-wrapper~* #navbar[data-transparent-mode="full"]>div,
-    body:has(#banner-wrapper) #navbar[data-transparent-mode="full"]>div {
-        backdrop-filter: none !important;
+    #wallpaper-wrapper~* #navbar[data-transparent-mode="full"]>div,
+    body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="full"]>div {
+        backdrop-filter: blur(0) !important;
         background: transparent !important;
         border: none !important;
         border-radius: 0 !important;
         box-shadow: none !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
 
     /* "semifull" (static) */
-    #banner-wrapper~* #navbar[data-transparent-mode="semifull"]>div,
-    body:has(#banner-wrapper) #navbar[data-transparent-mode="semifull"]>div {
-        backdrop-filter: none !important;
+    #wallpaper-wrapper~* #navbar[data-transparent-mode="semifull"]>div,
+    body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]>div {
+        backdrop-filter: blur(0) !important;
         background: transparent !important;
-        border: 1px solid transparent !important;
+        border: none !important;
         border-radius: 0 0 0.75rem 0.75rem !important;
         box-shadow: none !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
 
     /* "semifull" (scrolled) */
-    #banner-wrapper~* #navbar[data-transparent-mode="semifull"].scrolled>div,
-    body:has(#banner-wrapper) #navbar[data-transparent-mode="semifull"].scrolled>div {
+    #wallpaper-wrapper~* #navbar[data-transparent-mode="semifull"].scrolled>div,
+    body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"].scrolled>div {
         backdrop-filter: blur(var(--navbar-glass-blur, 20px)) !important;
         background: rgba(255, 255, 255, var(--opacity-55)) !important;
-        border: 1px solid rgba(255, 255, 255, var(--opacity-55)) !important;
         border-radius: 0 0 0.75rem 0.75rem !important;
         box-shadow: var(--shadow-navbar) !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
 }
 
@@ -87,47 +108,41 @@
 @media (max-width: 1023px) {
 
     /* "semi" */
-    #banner-wrapper~* #navbar[data-transparent-mode="semi"][data-is-home="true"]>div,
-    body:has(#banner-wrapper) #navbar[data-transparent-mode="semi"][data-is-home="true"]>div {
+    #wallpaper-wrapper~* #navbar[data-transparent-mode="semi"][data-is-home="true"]>div,
+    body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semi"][data-is-home="true"]>div {
         backdrop-filter: blur(var(--navbar-glass-blur, 20px)) !important;
         background: rgba(255, 255, 255, var(--opacity-55)) !important;
-        border: 1px solid rgba(255, 255, 255, var(--opacity-55)) !important;
         border-radius: 0 0 0.75rem 0.75rem !important;
         box-shadow: var(--shadow-navbar) !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
 
     /* "full" */
-    #banner-wrapper~* #navbar[data-transparent-mode="full"][data-is-home="true"]>div,
-    body:has(#banner-wrapper) #navbar[data-transparent-mode="full"][data-is-home="true"]>div {
-        backdrop-filter: none !important;
+    #wallpaper-wrapper~* #navbar[data-transparent-mode="full"][data-is-home="true"]>div,
+    body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="full"][data-is-home="true"]>div {
+        backdrop-filter: blur(0) !important;
         background: transparent !important;
         border: none !important;
         border-radius: 0 !important;
         box-shadow: none !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
 
     /* "semifull" (static) */
-    #banner-wrapper~* #navbar[data-transparent-mode="semifull"][data-is-home="true"]>div,
-    body:has(#banner-wrapper) #navbar[data-transparent-mode="semifull"][data-is-home="true"]>div {
-        backdrop-filter: none !important;
+    #wallpaper-wrapper~* #navbar[data-transparent-mode="semifull"][data-is-home="true"]>div,
+    body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"][data-is-home="true"]>div {
+        backdrop-filter: blur(0) !important;
         background: transparent !important;
-        border: 1px solid transparent !important;
+        border: none !important;
         border-radius: 0 0 0.75rem 0.75rem !important;
         box-shadow: none !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
 
     /* "semifull" (scrolled) */
-    #banner-wrapper~* #navbar[data-transparent-mode="semifull"][data-is-home="true"].scrolled>div,
-    body:has(#banner-wrapper) #navbar[data-transparent-mode="semifull"][data-is-home="true"].scrolled>div {
+    #wallpaper-wrapper~* #navbar[data-transparent-mode="semifull"][data-is-home="true"].scrolled>div,
+    body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"][data-is-home="true"].scrolled>div {
         backdrop-filter: blur(var(--navbar-glass-blur, 20px)) !important;
         background: rgba(255, 255, 255, var(--opacity-55)) !important;
-        border: 1px solid rgba(255, 255, 255, var(--opacity-55)) !important;
         border-radius: 0 0 0.75rem 0.75rem !important;
         box-shadow: var(--shadow-navbar) !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
 }
 
@@ -137,34 +152,32 @@
 @media (min-width: 1024px) {
 
     /* "semi" */
-    :root.dark #banner-wrapper~* #navbar[data-transparent-mode="semi"]>div,
-    :root.dark body:has(#banner-wrapper) #navbar[data-transparent-mode="semi"]>div {
+    :root.dark #wallpaper-wrapper~* #navbar[data-transparent-mode="semi"]>div,
+    :root.dark body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semi"]>div {
         background: rgba(0, 0, 0, var(--opacity-55)) !important;
-        border: 1px solid rgba(0, 0, 0, var(--opacity-55)) !important;
         box-shadow: var(--shadow-navbar-dark) !important;
     }
 
     /* "full" */
-    :root.dark #banner-wrapper~* #navbar[data-transparent-mode="full"]>div,
-    :root.dark body:has(#banner-wrapper) #navbar[data-transparent-mode="full"]>div {
+    :root.dark #wallpaper-wrapper~* #navbar[data-transparent-mode="full"]>div,
+    :root.dark body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="full"]>div {
         background: transparent !important;
         border: none !important;
         box-shadow: none !important;
     }
 
     /* "semifull" (static) */
-    :root.dark #banner-wrapper~* #navbar[data-transparent-mode="semifull"]>div,
-    :root.dark body:has(#banner-wrapper) #navbar[data-transparent-mode="semifull"]>div {
+    :root.dark #wallpaper-wrapper~* #navbar[data-transparent-mode="semifull"]>div,
+    :root.dark body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]>div {
         background: transparent !important;
-        border: 1px solid transparent !important;
+        border: none !important;
         box-shadow: none !important;
     }
 
     /* "semifull" (scrolled) */
-    :root.dark #banner-wrapper~* #navbar[data-transparent-mode="semifull"].scrolled>div,
-    :root.dark body:has(#banner-wrapper) #navbar[data-transparent-mode="semifull"].scrolled>div {
+    :root.dark #wallpaper-wrapper~* #navbar[data-transparent-mode="semifull"].scrolled>div,
+    :root.dark body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"].scrolled>div {
         background: rgba(0, 0, 0, var(--opacity-55)) !important;
-        border: 1px solid rgba(0, 0, 0, var(--opacity-55)) !important;
         box-shadow: var(--shadow-navbar-dark) !important;
     }
 }
@@ -175,34 +188,32 @@
 @media (max-width: 1023px) {
 
     /* "semi" */
-    :root.dark #banner-wrapper~* #navbar[data-transparent-mode="semi"][data-is-home="true"]>div,
-    :root.dark body:has(#banner-wrapper) #navbar[data-transparent-mode="semi"][data-is-home="true"]>div {
+    :root.dark #wallpaper-wrapper~* #navbar[data-transparent-mode="semi"][data-is-home="true"]>div,
+    :root.dark body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semi"][data-is-home="true"]>div {
         background: rgba(0, 0, 0, var(--opacity-55)) !important;
-        border: 1px solid rgba(0, 0, 0, var(--opacity-55)) !important;
         box-shadow: var(--shadow-navbar-dark) !important;
     }
 
     /* "full" */
-    :root.dark #banner-wrapper~* #navbar[data-transparent-mode="full"][data-is-home="true"]>div,
-    :root.dark body:has(#banner-wrapper) #navbar[data-transparent-mode="full"][data-is-home="true"]>div {
+    :root.dark #wallpaper-wrapper~* #navbar[data-transparent-mode="full"][data-is-home="true"]>div,
+    :root.dark body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="full"][data-is-home="true"]>div {
         background: transparent !important;
         border: none !important;
         box-shadow: none !important;
     }
 
     /* "semifull" (static) */
-    :root.dark #banner-wrapper~* #navbar[data-transparent-mode="semifull"][data-is-home="true"]>div,
-    :root.dark body:has(#banner-wrapper) #navbar[data-transparent-mode="semifull"][data-is-home="true"]>div {
+    :root.dark #wallpaper-wrapper~* #navbar[data-transparent-mode="semifull"][data-is-home="true"]>div,
+    :root.dark body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"][data-is-home="true"]>div {
         background: transparent !important;
-        border: 1px solid transparent !important;
+        border: none !important;
         box-shadow: none !important;
     }
 
     /* "semifull" (scrolled) */
-    :root.dark #banner-wrapper~* #navbar[data-transparent-mode="semifull"][data-is-home="true"].scrolled>div,
-    :root.dark body:has(#banner-wrapper) #navbar[data-transparent-mode="semifull"][data-is-home="true"].scrolled>div {
+    :root.dark #wallpaper-wrapper~* #navbar[data-transparent-mode="semifull"][data-is-home="true"].scrolled>div,
+    :root.dark body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"][data-is-home="true"].scrolled>div {
         background: rgba(0, 0, 0, var(--opacity-55)) !important;
-        border: 1px solid rgba(0, 0, 0, var(--opacity-55)) !important;
         box-shadow: var(--shadow-navbar-dark) !important;
     }
 }
@@ -211,43 +222,54 @@
 /* ============================================
  * 关闭毛玻璃模糊效果 - Banner模式
  * ============================================ */
-body:has(#banner-wrapper) #navbar[data-transparent-mode="semi"][data-enable-blur="false"]>div,
-body:has(#banner-wrapper) #navbar[data-transparent-mode="semi"][data-enable-blur="false"].scrolled>div {
-    backdrop-filter: none !important;
+body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semi"][data-enable-blur="false"]>div,
+body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semi"][data-enable-blur="false"].scrolled>div {
+    backdrop-filter: blur(0) !important;
 }
 
-body:has(#banner-wrapper) #navbar[data-transparent-mode="full"][data-enable-blur="false"]>div,
-body:has(#banner-wrapper) #navbar[data-transparent-mode="full"][data-enable-blur="false"].scrolled>div {
-    backdrop-filter: none !important;
+body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="full"][data-enable-blur="false"]>div,
+body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="full"][data-enable-blur="false"].scrolled>div {
+    backdrop-filter: blur(0) !important;
 }
 
-body:has(#banner-wrapper) #navbar[data-transparent-mode="semifull"][data-enable-blur="false"]>div,
-body:has(#banner-wrapper) #navbar[data-transparent-mode="semifull"][data-enable-blur="false"].scrolled>div {
-    backdrop-filter: none !important;
+body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"][data-enable-blur="false"]>div,
+body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"][data-enable-blur="false"].scrolled>div {
+    backdrop-filter: blur(0) !important;
 }
+
+/* 页面切换期间强制 semifull 保持透明，避免自动回顶时出现背景闪烁 */
+.is-page-transitioning #wallpaper-wrapper~* #navbar[data-transparent-mode="semifull"]:not(.scrolled)>div,
+.is-page-transitioning body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scrolled)>div {
+    backdrop-filter: blur(0) !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+}
+
 
 
 /* 调整下拉菜单和浮动面板的背景透明度 */
 /* 亮色主题 */
-#banner-wrapper~* .dropdown-content,
-#banner-wrapper~* .float-panel,
-body:has(#banner-wrapper) .dropdown-content,
-body:has(#banner-wrapper) .float-panel,
+#wallpaper-wrapper~* .dropdown-content,
+#wallpaper-wrapper~* .float-panel,
+body:has(#wallpaper-wrapper) .dropdown-content,
+body:has(#wallpaper-wrapper) .float-panel,
 body.wallpaper-transparent .dropdown-content,
 body.wallpaper-transparent .float-panel {
-    background: rgba(255, 255, 255, 0.9) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
     box-shadow: var(--shadow-md) !important;
     border: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
 /* 暗色主题 */
-:root.dark #banner-wrapper~* .dropdown-content,
-:root.dark #banner-wrapper~* .float-panel,
-:root.dark body:has(#banner-wrapper) .dropdown-content,
-:root.dark body:has(#banner-wrapper) .float-panel,
+:root.dark #wallpaper-wrapper~* .dropdown-content,
+:root.dark #wallpaper-wrapper~* .float-panel,
+:root.dark body:has(#wallpaper-wrapper) .dropdown-content,
+:root.dark body:has(#wallpaper-wrapper) .float-panel,
 :root.dark body.wallpaper-transparent .dropdown-content,
 :root.dark body.wallpaper-transparent .float-panel {
-    background: rgba(23, 23, 23, 0.9) !important;
+    background: rgba(23, 23, 23, 0.95) !important;
     box-shadow: var(--shadow-md) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
@@ -261,7 +283,7 @@ body.wallpaper-transparent .float-panel {
  * ============================================ */
 @media (min-width: 1024px) {
     #navbar-wrapper #navbar[data-full-width="true"] > div,
-    body:has(#banner-wrapper) #navbar-wrapper #navbar[data-full-width="true"] > div,
+    body:has(#wallpaper-wrapper) #navbar-wrapper #navbar[data-full-width="true"] > div,
     body.wallpaper-transparent #navbar-wrapper #navbar[data-full-width="true"] > div,
     #navbar-wrapper #navbar[data-full-width="true"].scrolled > div {
         border-radius: 0 !important;
@@ -272,9 +294,9 @@ body.wallpaper-transparent .float-panel {
 }
 
 /* ============================================
- * 小于1200px时隐藏导航栏菜单图标
+ * 小于1280px时隐藏导航栏菜单图标
  * ============================================ */
-@media (max-width: 1199px) {
+@media (max-width: 1279px) {
     .navbar-icon {
         display: none !important;
     }

@@ -8,7 +8,7 @@
 > 
 > ![Node.js >= 22](https://img.shields.io/badge/node.js-%3E%3D22-brightgreen) 
 ![pnpm >= 9](https://img.shields.io/badge/pnpm-%3E%3D9-blue)
-![Astro](https://img.shields.io/badge/Astro-5.16.15-orange)
+![Astro](https://img.shields.io/badge/Astro-6.3.1-orange)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue)
 >
 > [![Stars](https://img.shields.io/github/stars/CuteLeaf/Firefly?style=social)](https://github.com/CuteLeaf/Firefly/stargazers)
@@ -16,17 +16,19 @@
 [![Issues](https://img.shields.io/github/issues/CuteLeaf/Firefly)](https://github.com/CuteLeaf/Firefly/issues)
 > 
 > [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z41NQALY)
+>
+> **QQ交流群：[1087127207](https://qm.qq.com/q/ZGsFa8qX2G)**
 > 
 > ![GitHub License](https://img.shields.io/github/license/CuteLeaf/Firefly)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/CuteLeaf/Firefly)
-[![愛發電贊助](https://img.shields.io/badge/愛發電-贊助作者-ff69b4.svg)](https://afdian.com/a/cuteleaf)
+[![愛發電贊助](https://img.shields.io/badge/愛發電-贊助作者-ff69b4.svg)](https://ifdian.net/a/cuteleaf)
 
 </div>
 
 
 ---
 📖 README：
-**[简体中文](../README.zh.md)** | **[繁體中文](README.zh-TW.md)** | **[English](../README.md)** | **[日本語](README.ja.md)** | **[Русский](README.ru.md)**
+**[简体中文](../README.md)** | **[繁體中文](README.zh-TW.md)** | **[English](../README.en.md)** | **[日本語](README.ja.md)** | **[Русский](README.ru.md)**
 
 🚀 快速指南：
 [**🖥️線上預覽**](https://firefly.cuteleaf.cn/) /
@@ -42,15 +44,25 @@
 🔧 高度可配置: 大部分功能模組均可透過配置檔案自訂
 
 <img alt="firefly" src="./images/1.webp" />
+<img alt="Lighthouse" src="./images/Lighthouse.png" />
 
 >[!TIP]
->Firefly 是一款基於 Astro 框架和 Fuwari 模板開發的清新美觀且現代化個人部落格主題模板，專為技術愛好者和內容創作者設計。該主題融合了現代 Web 技術棧，提供了豐富的功能模組和高度可定制的界面，讓您能夠輕鬆打造出專業且美觀的個人部落格網站。
 >
->在重要的版面配置上，Firefly 創新性地增加了左右雙側邊欄、文章網格(多列)版面配置、瀑布流配置，增加了站點統計、日曆元件、文章目錄等小元件，讓側邊欄更加豐富，同時也保留了原版 fuwari 的版面配置，可根據自己的喜好在配置檔案中自由切換。
+>Firefly 是一款基於 Astro 框架和 Fuwari 模板開發的清新美觀且現代化個人部落格主題模板，專為技術愛好者和內容創作者設計。該主題融合了現代 Web 技術棧，提供了豐富的功能模組和高度可自訂的介面，讓您能夠輕鬆打造出專業且美觀的個人部落格網站。
+>
+>在重要的版面上，Firefly 創新性地增加了左右雙側邊欄、文章網格（多列）版面、瀑布流版面。
+>
+>增加了站點統計、日曆、文章目錄、音樂播放器、快捷分類導覽等小元件，讓側邊欄和整體頁面版面更加豐富。
+>
+>同時也增加了分享海報、相關文章推薦、隨機文章等元件，讓文章頁面內容更加豐富。
+>
+>**如果你參考或使用了 Firefly 以上元件設計和相關程式碼，請註明來自 Firefly。**
+>
+>Firefly 也保留了原版 fuwari 的版面，可根據自己的喜好在配置檔案中自由切換。
 >
 >**更多版面配置及示範請查看：[Firefly 版面配置系統詳解](https://firefly.cuteleaf.cn/posts/firefly-layout-system/)**
 >
->Firefly 支援 i18n 多語言切換，但除了簡體中文，其他語言均為 AI 翻譯轉換，如有錯誤，歡迎提交 [Pull Request](https://github.com/CuteLeaf/Firefly/pulls) 修正。
+>Firefly 支援 i18n 多語言 UI，但除了簡體中文，其他語言均為 AI 翻譯轉換，如有錯誤，歡迎提交 [Pull Request](https://github.com/CuteLeaf/Firefly/pulls) 修正。
 
 ## ✨ 功能特性
 
@@ -59,7 +71,7 @@
 - [x] **Astro + Tailwind CSS** - 基於現代技術堆疊的超快靜態站點生成
 - [x] **流暢動畫** - Swup 頁面過渡動畫，提供絲滑的瀏覽體驗
 - [x] **響應式設計** - 完美適配桌面端、平板和行動裝置
-- [x] **多語言支援** - i18n 國際化，支援簡體中文、繁體中文、英文、日文、俄語
+- [x] **多語言支援** - i18n 國際化UI，支援簡體中文、繁體中文、英文、日文、俄語
 - [x] **全文搜尋** - 基於 Pagefind 的客戶端搜尋，支援文章內容索引。
 
 ### 個性化
@@ -69,40 +81,9 @@
 - [x] **頁尾配置** - HTML 內容注入，完全自訂
 - [x] **亮暗色模式** - 支援亮色/暗色/跟隨系統三種模式
 - [x] **導覽列自訂** - Logo、標題、連結全面自訂
-- [x] **桌布模式切換** - 橫幅桌布、全螢幕桌布、純色背景
+- [x] **桌布模式切換** - 橫幅桌布、全螢幕桌布、全螢幕透明桌布、純色背景
 - [x] **主題色自訂** - 360° 色相調節
 
-### 頁面元件
-- [x] **留言板** - 支援留言頁面
-- [x] **公告欄** - 支援側邊欄公告提示
-- [x] **看板娘** - 支援 Spine 和 Live2D 兩種動畫引擎
-- [x] **站點統計** - 顯示文章、分類、標籤數目、文章總字數等數據
-- [x] **站點日曆** - 顯示當月日曆，以及當月的發布文章
-- [x] **贊助頁面** - 贊助連結跳轉、收款碼展示、贊助者列表、文章內贊助按鈕
-- [x] **分享海報** - 支援生成精美的文章分享海報
-- [x] **櫻花特效** - 支援櫻花特效，全螢幕櫻花效果
-- [x] **友情連結** - 精美的友情連結展示頁面
-- [x] **廣告元件** - 支援自訂側邊欄廣告內容
-- [x] **番組計畫** - 基於 Bangumi API 的追番和遊戲記錄展示
-- [x] **留言系統** - 整合 Twikoo、Waline、Giscus、Disqus、Artalk 留言系統
-- [x] **訪問量統計** - 支援呼叫 Waline、Twikoo 自帶的訪問量追蹤
-- [x] **音樂播放器** - 基於 APlayer，支援本地音樂和 Meting API 線上音樂
-
-### 內容增強
-- [x] **圖片燈箱** - Fancybox 圖片預覽功能
-- [x] **浮動目錄** - 動態顯示文章目錄，支援錨點跳轉，在側邊欄目錄隱藏後顯示
-- [x] **信箱保護** - 讓自動化爬蟲程式無法直接爬取信箱地址，避免垃圾郵件騷擾
-- [x] **側邊欄目錄** - 動態顯示文章目錄，支援錨點跳轉
-- [x] **增強程式碼區塊** - 基於 Expressive Code，支援程式碼摺疊、行號、語言標識
-- [x] **數學公式支援** - KaTeX 渲染引擎，支援行內和區塊級公式
-- [x] **文章隨機封面圖** - 支援透過 API 獲取隨機封面圖
-- [x] **Markdown擴充** - 更多的 Markdown 擴充語法
-
-### SEO
-- [x] **SEO 優化** - 完整的 meta 標籤和結構化資料
-- [x] **RSS 訂閱** - 自動生成 RSS Feed
-- [x] **站點地圖** - 自動生成 XML Sitemap，支援頁面篩選配置
-- [x] **統計分析** - 集成 Google Analytics、Microsoft Clarity
 
 如果你有好用的功能和優化，請提交 [Pull Request](https://github.com/CuteLeaf/Firefly/pulls)
 
@@ -110,8 +91,8 @@
 
 ### 環境要求
 
-- Node.js ≤ 22
-- pnpm ≤ 9
+- Node.js ≥ 22
+- pnpm ≥ 9
 
 ### 本地開發部署
 
@@ -146,7 +127,8 @@
    部落格將在 `http://localhost:4321` 可用
 
 ### 平台託管部署
-- **參考[官方指南](https://docs.astro.build/zh-cn/guides/deploy/)將部落格部署至 Vercel, Netlify, GitHub Pages, Cloudflare Pages, EdgeOne Pages 等。**
+- **參考[官方指南](https://docs.astro.build/zh-cn/guides/deploy/)將部落格部署至 Vercel, Netlify, Cloudflare Pages, EdgeOne Pages 等。**
+- **Vercel**、**Netlify** 等主流平台自動部署，會根據環境自動選擇適配器。
 
    框架預設： `Astro`
 
@@ -157,6 +139,9 @@
    建置命令： `pnpm run build`
 
    安裝命令： `pnpm install`
+
+   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/CuteLeaf/Firefly&project-name=Firefly&repository-name=Firefly)
+   [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/CuteLeaf/Firefly)
 
 ## 📖 配置說明
 
@@ -193,7 +178,7 @@ src/
 │   ├── footerConfig.ts       # 頁尾配置
 │   ├── FooterConfig.html     # 頁尾HTML內容
 │   ├── expressiveCodeConfig.ts # 程式碼高亮配置
-│   ├── sakuraConfig.ts       # 櫻花特效配置
+│   ├── effectsConfig.ts      # 動畫特效配置（櫻花等）
 │   ├── fontConfig.ts         # 字型配置
 │   ├── sidebarConfig.ts      # 側邊欄版面配置配置
 │   ├── navBarConfig.ts       # 導覽列配置
@@ -201,6 +186,7 @@ src/
 │   ├── pioConfig.ts          # 看板娘配置
 │   ├── adConfig.ts           # 廣告配置
 │   ├── friendsConfig.ts      # 友鏈配置
+│   ├── galleryConfig.ts      # 相簿配置
 │   ├── sponsorConfig.ts      # 贊助配置
 │   └── coverImageConfig.ts   # 文章隨機封面圖配置
 ```
@@ -247,20 +233,32 @@ comment: true    # 是否允許留言
 
 ## 🙏 致謝
 
-- 非常感謝 [saicaca](https://github.com/saicaca) 開發的 [fuwari](https://github.com/saicaca/fuwari) 範本，Firefly 就是基於這個範本二次開發
-- 參考了部落格主 [霞葉](https://kasuha.com) 分享的 [Bangumi 收藏展示](https://kasuha.com/posts/fuwari-enhance-ep2/) 和 [圖片標題](https://kasuha.com/posts/fuwari-enhance-ep1/) 方案
-- 參考了 [Mizuki](https://github.com/matsuzaka-yuki/Mizuki) 的橫幅標題/多級選單導覽列/櫻花特效/KaTeX/Fancybox方案
-- 使用了 [Astro](https://astro.build) 和 [Tailwind CSS](https://tailwindcss.com) 建置
-- 使用了 [MetingJS](https://github.com/metowolf/MetingJS) 和 [APlayer](https://github.com/MoePlayer/APlayer) 音樂播放器
-- 使用了b站up [公公的日常](https://space.bilibili.com/3546750017080050) 提供的Q版 `流螢` 看板娘切片資料模型
-- 圖示來自 [Iconify](https://iconify.design/)
-- 流螢部分相關圖片素材版權歸遊戲 [《崩壞：星穹鐵道》](https://sr.mihoyo.com/) 開發商 [米哈遊](https://www.mihoyo.com/) 所有
+非常感謝 [saicaca](https://github.com/saicaca) 開發的 [fuwari](https://github.com/saicaca/fuwari) 範本，Firefly 就是基於這個範本二次開發
+
+流螢部分相關圖片素材版權歸遊戲 [《崩壞：星穹鐵道》](https://sr.mihoyo.com/) 開發商 [米哈遊](https://www.mihoyo.com/) 所有
+
+### 技術棧
+
+- [Astro](https://astro.build) 
+- [Tailwind CSS](https://tailwindcss.com) 
+- [Iconify](https://iconify.design)
+
+### 靈感專案
+
+- [fuwari](https://github.com/saicaca/fuwari)
+- [hexo-theme-shoka](https://github.com/amehime/hexo-theme-shoka)
+- [astro-koharu](https://github.com/cosZone/astro-koharu)
+- [Mizuki](https://github.com/matsuzaka-yuki/Mizuki)
+
+### 其他參考
+- 部落客`霞葉`的 [Bangumi 收藏](https://kasuha.com/posts/fuwari-enhance-ep2/) 頁面元件
+- 嗶哩嗶哩up主 `公公的日常` 的Q版 [流螢看板娘Spine切片資料](https://www.bilibili.com/video/BV1fuVzzdE5y)
 
 ## 📝 許可協議
 
 本專案遵循 [MIT license](https://mit-license.org/) 開源協議，詳細查看 [LICENSE](../LICENSE) 文件
 
-最初 Fork 自 [saicaca/fuwari](https://github.com/saicaca/fuwari)，感謝原作者的貢獻，原專案採用 [MIT license](https://mit-license.org/)
+最初 Fork 自 [saicaca/fuwari](https://github.com/saicaca/fuwari)，感謝原作者的貢獻
 
 **版權聲明：**
 - Copyright (c) 2024 [saicaca](https://github.com/saicaca) - [fuwari](https://github.com/saicaca/fuwari)

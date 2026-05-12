@@ -3,7 +3,7 @@ title: Firefly 简单使用指南
 published: 2026-01-02
 pinned: true
 description: "如何使用 Firefly 博客模板。"
-image: "./cover.webp"
+image: "./cover.avif"
 tags: ["Firefly", "博客", "Markdown", "使用指南"]
 category: 博客指南
 draft: true
@@ -48,6 +48,8 @@ draft: false
 | `draft`       | 如果这篇文章仍是草稿，则不会显示。                                                                                                                                                                  |
 | `comment`     | 是否启用此文章的评论功能。默认为 `true`。                                                                                                                                                           |
 | `slug`        | 自定义文章 URL 路径。如果不设置，将使用文件名作为 URL。                                                                                                                                              |
+| `password`    | 文章密码。设置后文章内容将被 AES-256-GCM 加密，访客需输入密码才能查看。                                                                                                                              |
+| `passwordHint`| 密码提示。显示在密码输入框上方，帮助访客回忆密码，也可以不加。                                                                                                                                                    |
 
 ## 文章文件的放置位置
 
