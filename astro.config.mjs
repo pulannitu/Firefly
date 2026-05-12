@@ -48,6 +48,9 @@ export default defineConfig({
 	
 	base: "/",
 	trailingSlash: "always",
+	devToolbar: {
+		enabled: false,
+	},
 
 	// 图像优化配置
 	image: {
